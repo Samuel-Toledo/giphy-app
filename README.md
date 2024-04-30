@@ -20,6 +20,7 @@ git add "Nombre del archivo"
 
 Para (dar seguimiento) eliminarlo es
 git reset "Nombre del archivo"
+
 Para que persevere se usa
 git commit-m "MENSAJE PERSONALIZADO"
 
@@ -39,4 +40,8 @@ CARGAR CAMBIOS AL REMOTO Y DEFFINIR DICHO REMOTO COMO DEFAULT
 git push -u "NOMBRE DEL REMOTO" "NOMBRE DE LA RAMA EN QUE TRABAJAMOS"
 
 :)
+
+Agrega todos los archivos, nuevos o modificados
+git add .
+
 ```
