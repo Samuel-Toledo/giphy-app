@@ -20,4 +20,9 @@ git add "Nombre del archivo"
 
 Para (dar seguimiento) eliminarlo es
 git reset "Nombre del archivo"
+Para que persevere se usa
+git commit-m "MENSAJE PERSONALIZADO"
+
+Para hcer un tipo de ctrl Z o devolver el archivo al ultimo commit
+git checkout .
 ```
