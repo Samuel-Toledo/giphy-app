@@ -2,6 +2,10 @@
     --bg-black: #1c1c1c;
     --bg-white: #ffffff;
     --bg-gary: #aeaeae;
+    --bg-gradient: linear-gradient(70deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    --bg-box-shadow: rgba(255, 250, 255, 0.2) 2px 2px 4px;
+    --bg-disbled: #545454;
+    --bg-disbled-ligth: rgb(143, 143, 143);
 }
 
 * {
@@ -30,6 +34,7 @@ body {
 
 .search-gifs-form {
     display: flex;
+    margin-bottom: 30px;
     align-items: center;
     justify-content: center;
 }
@@ -65,10 +70,124 @@ body {
     color: var(--bg-white);
     border: none;
     border-radius: 0px 2px 2px 0px;
-    background: linear-gradient(70deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);;
-    box-shadow: rgba(255, 250, 255, 0.2) 2px 2px 4px;
+    background: var(--bg-gradient);
+    box-shadow: var(--bg-box-shadow);
 }
 
 .search-gifs-form button i {
     font-size: 14px;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    border: none;
+    padding: 6px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--bg-white);
+    background: var(--bg-gradient);
+    box-shadow: var(--bg-box-shadow);
+}
+btn i {
+    margin-left: 10px;
+}
+
+/* detecta el click del boton */
+button.btn:active {
+    transform: translateY(1px);
+}
+/* detecta boton desabilitado */
+
+button.btn:disabled {
+    background-color: red;
+    cursor: not-allowed;
+    color: var(--bg-disbled);
+    background: var(--bg-disbled-ligth);
+}
+
+/* detecta que al boton desbilitado se le da click */
+button.btn:disabled:active {
+    transform: none;
+}
+
+/* estilos de gifs vacios */
+
+.empty-gifs-container {
+    display: none;
+}
+
+.empty-gifs-container .active {
+    display: block;
+}
+
+.empty-gifs-container .empty-gifs {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--bg-white);
+}
+
+
+/* estilos de gifs */
+
+.gifs-container {
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.gif-card {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    box-shadow: var(--bg-box-shadow);
+    position: relative;
+}
+
+.gif-card img {
+    max-width: 100%;
+}
+.gif-card .details {
+    top:  0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-wrap: wrap;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.gif-card i {
+    color: var(--bg-white);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.gif-card:hover .details {
+    display: flex;
+}
+
+.gif-card .name {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 10px;
+    font-weight: 600;
+    background-color: var(--bg-white);
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 30px 20px;
+    }
 }
