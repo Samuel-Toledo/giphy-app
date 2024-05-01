@@ -1,2 +1,25 @@
+:root {
+    --bg-black: #1c1c1c;
+    --bg-white: #ffffff;
+    --bg-gary: #787878;
+}
 
-/* PRUEBA CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    padding: 30px 50px;
+    background-color: var(--bg-black);
+}
+
+.app-title {
+    color: var(--bg-white);
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px dashed var(--bg-white);
+    padding-bottom: 20px;
+}
