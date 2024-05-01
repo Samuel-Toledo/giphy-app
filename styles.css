@@ -93,8 +93,9 @@ body {
     color: var(--bg-white);
     background: var(--bg-gradient);
     box-shadow: var(--bg-box-shadow);
+    border-radius: 2px;
 }
-btn i {
+.btn i {
     margin-left: 10px;
 }
 
@@ -155,6 +156,7 @@ button.btn:disabled:active {
 
 .gif-card img {
     max-width: 100%;
+    border-radius: 2px 2px 0px 0px;
 }
 .gif-card .details {
     top:  0;
@@ -184,6 +186,7 @@ button.btn:disabled:active {
     padding: 5px 10px;
     font-weight: 600;
     background-color: var(--bg-white);
+    border-radius: 0px 0px 2px 2px;
 }
 
 @media (max-width: 360px) {
