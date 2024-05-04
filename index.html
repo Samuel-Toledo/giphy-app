@@ -16,8 +16,8 @@
 
     <form id="search-gifs-form" class="search-gifs-form">
         <div class="control-container">
-            <input type="text" name="key-word" id="key-word" placeholder="Busca un gif...">
-            <i class="fa-solid fa-circle-xmark"></i>
+            <input class="input-search" type="text" name="key-word" id="key-word" placeholder="Busca un gif...">
+            <i class="fa-solid fa-circle-xmark clear-icon" att-for ="key-word"></i>
 
         </div>
         <button type="submit">
@@ -25,10 +25,12 @@
         </button>
     </form>
 
+
+
     <!-- Acciones adicionales -->
 
     <div class="action-container">
-        <button class="btn" id="btn-load-more"> Cargar mas...</button>
+        <button class="btn" id="btn-load-more" disabled> Cargar mas...</button>
         <button class="btn" id="btn-favourites"> 
             Favortios
             <i class="fa-solid fa-heart"></i>
@@ -38,7 +40,7 @@
     <!-- Contenedor de gifs -->
 
     <div class="gifs-container" id="gifs-container">
-        <div class="gif-card">
+        <!-- <div class="gif-card">
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTJwY2x3dWw0c2dtbjFoZzRmd2EwdDBpOTd1OHZhbTJ3aDI5enI3ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KegCCrQkkkJzO/giphy.gif" alt="">
             <div class="details">
                 <i class="fa-solid fa-link"></i>
@@ -46,7 +48,7 @@
             </div>
             <p class="name">wolvwrine</p>
 
-        </div>
+        </div> -->
     </div>
 
     <!-- Contenedor de gifs vacio -->
