@@ -15,8 +15,13 @@ document.querySelectorAll(".control-container .clear-icon").forEach((element) =>
     element.addEventListener("click", (e) => {
         //Obtener el valor de una propiedad
         const inputId = e.target.getAttribute("att-for");
+
+        if (!inputId) return;
+
+        const input = document.querySelector(`#${inputId}`)
+        input.value = ""
         
-        alert("Hola")
+        input.dispatchEvent(new Event("keyup"))
     })
 })
 
