@@ -22,6 +22,7 @@ document.querySelectorAll(".control-container .clear-icon").forEach((element) =>
         input.value = ""
         
         input.dispatchEvent(new Event("keyup"))
+        input.focus();
     })
 })
 
