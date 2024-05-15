@@ -39,8 +39,23 @@ document.querySelectorAll(".control-container .input-search").forEach((element) 
         }
         document.querySelector("#btn-load-more").disabled = false
     
-        console.log(value);
     })
 })
 
-document.querySelector("#key-word")
+// document.querySelector("#key-word")
+
+
+document.querySelector("#search-gifs-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    console.log("Submit del formulario");
+    
+    const keyword = document.querySelector("#key-word").value;
+
+    if (!keyword) {
+        return
+    }
+
+    const gifs = await getGifsByKeywordAsync(keyword);
+    console.log(gifs);
+})
