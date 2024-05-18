@@ -49,7 +49,7 @@ const getTrendingGifsAsync = async () => {
 
 
 
-const getGifsByKeywordAsync = async (query) => {
+const getGifsByKeywordAsync = async (query, offset = 0) => {
     try {
     const endpoint = `${SERVER_URL}/search?`;
 
@@ -57,7 +57,7 @@ const getGifsByKeywordAsync = async (query) => {
         api_key: API_KEY,
         q: query, //To Do Cambiar por variable
         limit: 8,
-        offset: 0 //To Do Cambiar por variable
+        offset: offset //To Do Cambiar por variable
     });
 
     const url = endpoint + queryParams;
@@ -74,6 +74,8 @@ const getGifsByKeywordAsync = async (query) => {
     // OBTENEMOS LA RESPUESTA DEL SERVICIO
 
     const gifsResponse = await httpResponse.json();
+
+console.log(`que es ${gifsResponse}`);
 
     const {data} = gifsResponse;
 
@@ -94,5 +96,30 @@ const getGifsByKeywordAsync = async (query) => {
     }
 
 }
+
+// const addGifsInView = (gifs) => {
+//     if (gifs.length == 0) {
+//         alert("La busqueda no obtuvo resultado")
+//         return
+//     }
+//     const gifsContainer = document.querySelector("#gifs-container");
+
+//     gifs.forEach((gif) => {
+//         const gifCard = document.createElement("div");
+//         gifCard.classList.add(".gif-card")
+
+//         gifCard.innerHTML = `
+//         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTJwY2x3dWw0c2dtbjFoZzRmd2EwdDBpOTd1OHZhbTJ3aDI5enI3ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KegCCrQkkkJzO/giphy.gif" alt="">
+//         <div class="details">
+//             <i class="fa-solid fa-link"></i>
+//             <i class="fa-solid fa-heart"></i>
+//         </div>
+//         <p class="name">wolvwrine</p>
+
+//         `
+//         gifsContainer.append(gifCard);
+//     });
+
+// }
 
 
