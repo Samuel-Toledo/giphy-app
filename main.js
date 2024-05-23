@@ -7,6 +7,15 @@ const employe = {
 const {age, name} =employe
 
 console.log(age);
+// OBTENER VALOR DE LOCAL STORAGE
+
+ const value = localStorage.getItem();
+
+ localStorage.setItem();
+
+
+
+
 
 let _offset = 0;
 let _keyWord = "";
@@ -46,9 +55,7 @@ document.querySelectorAll(".control-container .input-search").forEach((element) 
 
 // document.querySelector("#key-word")
 
-document.querySelector("#btn-load-more").addEventListener("click", async() => {
-    await processGifs();
-})
+document.querySelector("#btn-load-more").addEventListener("click", async() => await processGifs());
 
 document.querySelector("#search-gifs-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -97,14 +104,33 @@ const addGifsInView = (gifs) => {
 
         gifCard.innerHTML = `
         <img src="${gif.imageUrl}" alt="${gif.name}">
-        <div class="details">
-            <i class="fa-solid fa-link"></i>
-            <i class="fa-solid fa-heart"></i>
-        </div>
+        <div class="details"></div>
         <p class="name">${gif.name}</p>
+        
+        `;
+        // <i class="fa-solid fa-link"></i>
+        // <i class="fa-solid fa-heart"></i>
 
-        `
+        const btnLink = document.createElement("i");
+        btnLink.classList.add("fa-solid", "fa-link");
+        btnLink.addEventListener("click", () =>{
+            navigator.clipboard.writeText(gif.imageUrl);
+            alert("Gif copied")
+        })
+
+
+        const btnFavorite = document.createElement("i");
+        btnFavorite.classList.add("fa-solid", "fa-heart");
+        btnFavorite.addEventListener("click", () =>{
+
+            alert("Gif added")
+        })
+
+        gifCard.querySelector(".details").append(btnLink, btnFavorite);  
+
+
         gifsContainer.prepend(gifCard);
+
     });
 
 }
